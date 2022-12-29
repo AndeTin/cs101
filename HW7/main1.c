@@ -5,11 +5,8 @@ int main()
     for(a=1;a<=i;a++)
     {
         printf(" ");
-        for(b=1;b<=i-a;b++)
-        {
-            printf(" ");
-        }
-        for(b=1;b<=a;b++)
+        printf("%*c",i-a+1,' ');
+        for(b=0;b<a;b++)
         {
             printf("%d ",a);
         }
