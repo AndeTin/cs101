@@ -3,7 +3,7 @@
 void print_spaces(int r,int rows){
     int i;
     for(i=0;i<rows-r;i++){
-        printf("%*c",i," ");
+        printf(" ");
     }
 }
 void print_stars(int r){
@@ -14,12 +14,12 @@ void print_stars(int r){
 }
 int main(){
     int rows=5;
-    int i;
-    for(i=1;i<=rows;i++,rows--)
-    {
-        print_spaces(i,rows);
-        print_stars(rows*5-1);
+    int i,r;
+    for(r=1;r<=rows;r++){
+        print_spaces(r,rows);
+        print_stars(r);
         printf("\n");
+    
+    
     }
-    return 0;
 }
