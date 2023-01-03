@@ -3,26 +3,21 @@
 int index=0;
 void get_binary(int i){
     if(i!=0){
-        if(i%2==1){
-            printf("1");
-            index++;
-            if(index % 4 == 0){
-                printf(" ");
-            }
-            get_binary(i/2);
+        get_binary(i/2);
+        printf("%d",i%2);
+        if(index%4==0){
+            printf(" ");
         }
-        else{
+        index++;
+    }
+    else{
+        if(index%4!=0){
             printf("0");
-            index++;
-            if(index % 4 == 0){
-                printf(" ");
-            }
-            get_binary(i/2);
         }
     }
 }
-
 int main(){
-    int i=128;
+    int i=25;
     get_binary(i);
+    return 0;
 }
