@@ -1,23 +1,20 @@
 #include<stdio.h>
 
 int index=0;
-void get_binary(int i){
-    if(i!=0){
-        get_binary(i/2);
-        printf("%d",i%2);
-        index++;
-        if(index%4==0){
-            printf(" ");
-        }
+void get_binary(int n){
+    if(n == 0 && index %4 == 0){
+        return;
     }
-    else{
-        if(index %4 != 0){
-            printf("0");
-        }
+    index++;
+    get_binary(n/2);
+    printf("%d",n%2);
+    index--;
+    if(index%4==0){
+        printf(" ");
     }
 }
+
 int main(){
-    int i=6;
-    get_binary(i);
-    return 0;
+    int n=127;
+    get_binary(n);
 }
