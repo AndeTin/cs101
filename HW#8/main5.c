@@ -1,21 +1,17 @@
 #include<stdio.h>
-int rows=7;
 void print_top(){
     printf("X'max tree!\n");
 }
 
 void print_spaces(int rows){
-    int j=0;
-    for(int i=0; i<rows; i++,j++){
+    for(int i=0; i<rows; i++){
         printf(" ");
-        if(j==3){
-            return;
-        }
     }
 }
 
+
 void print_stars(int r){
-    for(int i=0; i< r; i++){
+    for(int i=0; i< 2*r-1; i++){
         printf("*");
     }
     printf("\n");
@@ -23,13 +19,36 @@ void print_stars(int r){
 
 void print_trunk(int rows){
     for(int i=0; i<rows; i++){
-        printf("      *\n");
+        printf("       *\n");
     }
 }
 
 int main(){
-    int r;
-    print_top();
-    print_spaces(rows-1);
-    print_stars(1);
+    int r=0,rows=8,index=0;
+    for(int i=0; i< rows; i++){
+        if(index==4){
+            continue;
+        }
+        print_spaces(rows-r);
+        print_stars(r);
+        r++;
+        index++;
+    }
+    
+    for(int i=0,r=0,index=0; i< rows; i++){
+        if(index==6){
+            continue;
+        }
+        print_spaces(rows-r);
+        print_stars(r);
+        r++;
+        index++;
+    }
+    for(int i=0,r=0; i< rows; i++){
+        print_spaces(rows-r);
+        print_stars(r);
+        r++;
+    }
+    print_trunk(rows);
+
 }
